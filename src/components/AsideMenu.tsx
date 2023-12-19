@@ -11,8 +11,10 @@ const AsideMenu = () => {
           </ul>
         </div>
 
-        <div>
-          <SideMenuItem href="/" text="Library" />
+        <div className="bg-zinc-900 rounded-lg p-2 flex-1">
+          <ul>
+            <SideMenuItem href="/" text="Library" />
+          </ul>
         </div>
       </nav>
     </>
