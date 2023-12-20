@@ -22,7 +22,7 @@ const SideMenuItem: React.FC<SideMenuProps> = ({ href, text }) => {
           className="flex gap-4 text-zinc-400 hover:text-zinc-100 items-center py-3 px-5 font-medium transition duration-300"
         >
           {linksMap[text]}
-          {text}
+          {text === "Library" ? "Your " + text : text}
           <slot />
         </a>
       </li>
