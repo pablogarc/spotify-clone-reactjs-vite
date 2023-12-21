@@ -2,10 +2,10 @@ import "./App.css";
 import MainSection from "./components/Sections/MainSection";
 import AsideMenu from "./components/AsideMenu";
 import PlaylistItem from "./pages/PlaylistItem";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Player from "./components/Sections/Player";
 
 function App() {
-  const location = useLocation();
 
   return (
     <>
@@ -14,15 +14,19 @@ function App() {
           <AsideMenu />
         </aside>
 
-          <main className="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto">
-            <Routes location={location} key={location.pathname} >
+        <main className="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto">
+          <Router>
+            <Routes>
               <Route index element={<MainSection />} />
               <Route path="/playlist/:id" element={<PlaylistItem />} />
             </Routes>
-            <slot />
-          </main>
+          </Router>
+          <slot />
+        </main>
 
-        <footer className="[grid-area:player] min-h-[100px]">footer</footer>
+        <footer className="[grid-area:player]">
+          <Player />
+        </footer>
       </div>
     </>
   );
