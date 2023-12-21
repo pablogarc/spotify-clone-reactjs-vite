@@ -17,9 +17,9 @@ const AsideMenu = () => {
           <ul>
             <SideMenuItem href="/" text="Library" />
 
-            {
-              playlists.map(playlist => <SideMenuCard playlist={playlist} />)
-            }
+            {playlists.map((playlist) => (
+              <SideMenuCard key={playlist.id} playlist={playlist} />
+            ))}
           </ul>
         </div>
       </nav>
