@@ -4,7 +4,7 @@ interface SideMenuCardProps {
   playlist: Playlist;
 }
 
-const SideMenuCard: React.FC<SideMenuCardProps> = ({ playlist }) => {
+const SideMenuCard = ({ playlist }: SideMenuCardProps) => {
   const { id, cover, title, artists } = playlist;
   const artistsString = artists.join(", ");
 

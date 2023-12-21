@@ -7,7 +7,7 @@ interface SideMenuProps {
   text: string;
 }
 
-const SideMenuItem: React.FC<SideMenuProps> = ({ href, text }) => {
+const SideMenuItem = ({ href, text }: SideMenuProps) => {
   const linksMap: any = {
     Home: <GrHomeRounded size={24} />,
     Search: <FiSearch size={24} />,
