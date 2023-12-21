@@ -1,4 +1,5 @@
 import { playlists } from "../../lib/data";
+import Greeting from "../Greeting";
 import PlayListItemCard from "../PlayListItemCard";
 
 const MainSection = () => {
@@ -11,13 +12,12 @@ const MainSection = () => {
         {/* Page Header */}
 
         <div className="relative z-10 px-6 pt-10">
-
           {/* Greetings */}
-          <h1 className="font-bold text-4xl">Good Morning</h1>
+          <Greeting />
 
           <div className="flex flex-wrap mt-6 gap-4">
             {playlists.map((playlist) => (
-              <PlayListItemCard playlist={playlist} />
+              <PlayListItemCard key={playlist.id} playlist={playlist} />
             ))}
           </div>
         </div>
