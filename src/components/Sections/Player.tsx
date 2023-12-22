@@ -88,7 +88,7 @@ const CurrentSong = ({ image, title, artists }: any) => {
 };
 
 const SongControl = ({ audio }: any) => {
-  const [currentTime, setCurrentTime] = useState(0);
+  const { currentTime, setCurrentTime } = usePlayerStore((state) => state);
 
   useEffect(() => {
     audio.current.addEventListener("timeupdate", handleTimeUpdate);
@@ -179,9 +179,8 @@ const VolumeControl = () => {
 };
 
 const Player = () => {
-  const { currentMusic, isPlaying, setIsPlaying, volume } = usePlayerStore(
-    (state) => state
-  );
+  const { currentMusic, isPlaying, setIsPlaying, volume } =
+    usePlayerStore((state) => state);
   const audioRef: any = useRef();
 
   useEffect(() => {
