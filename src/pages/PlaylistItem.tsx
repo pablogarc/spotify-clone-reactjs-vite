@@ -1,3 +1,5 @@
+import CardPlayButton from "../components/CardPlayButton";
+import MusicsTable from "../components/MusicsTable";
 import { allPlaylists, songs } from "../lib/data";
 import { useParams } from "react-router-dom";
 
@@ -40,13 +42,27 @@ const PlaylistItem = () => {
                   <span>{playlist?.artists.join(", ")}</span>
                 </div>
                 <p className="mt-1">
-                  <span className="text-white">50 songs</span>, 3 hr 50 min
+                  <span className="text-white">
+                    {playlistSongs.length} songs
+                  </span>
+                  , 3 hr 50 min
                 </p>
               </div>
             </div>
           </div>
         </header>
 
+        <div className="pl-6 pt-6">
+          <CardPlayButton id={`${id}`} size="large" />
+        </div>
+
+        <div className="relative z-10 px-6 pt-10"></div>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80 -z-[1]"></div>
+
+        <section className="p-6">
+          <MusicsTable songs={playlistSongs} />
+        </section>
       </div>
     </>
   );
