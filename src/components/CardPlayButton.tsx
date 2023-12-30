@@ -3,7 +3,7 @@ import { usePlayerStore } from "../store/playerStore";
 import { allPlaylists, songs as allSongs } from "../lib/data";
 
 interface CardPlayButtonProps {
-  id: string;
+  id?: string;
   size?: string;
 }
 
@@ -11,7 +11,7 @@ const CardPlayButton = ({ id, size = "small" }: CardPlayButtonProps) => {
   const { currentMusic, isPlaying, setIsPlaying, setCurrentMusic } =
     usePlayerStore((state) => state);
 
-  const isPlayingPlaylist = isPlaying && currentMusic?.playlist.id === id;
+  const isPlayingPlaylist = isPlaying && currentMusic?.playlist?.id === id;
 
   const handleClick = () => {
     if (isPlayingPlaylist) {
@@ -19,8 +19,8 @@ const CardPlayButton = ({ id, size = "small" }: CardPlayButtonProps) => {
       return;
     }
 
-    const playlist = allPlaylists.find((playlist) => playlist.id === id);
-    const songs = allSongs.filter((song) => song.albumId === playlist?.albumId);
+    const playlist = allPlaylists.find((playlist) => playlist?.id === id);
+    const songs = allSongs.filter((song) => song?.albumId === playlist?.albumId);
 
     setIsPlaying(true);
     setCurrentMusic({ songs, playlist, song: songs[0] });
