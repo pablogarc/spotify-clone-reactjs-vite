@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Playlist } from "../lib/data";
 
 interface SideMenuCardProps {
@@ -10,8 +11,8 @@ const SideMenuCard = ({ playlist }: SideMenuCardProps) => {
 
   return (
     <>
-      <a
-        href={`/playlist/${id}`}
+      <Link
+        to={`/playlist/${id}`}
         className="playlist-item flex relative p-2 overflow-hidden items-center gap-5 rounded-md hover:bg-zinc-800"
       >
         <picture className="h-12 w-12 flex-none">
@@ -27,7 +28,7 @@ const SideMenuCard = ({ playlist }: SideMenuCardProps) => {
 
           <span className="text-xs text-gray-400">{artistsString}</span>
         </div>
-      </a>
+      </Link>
     </>
   );
 };
