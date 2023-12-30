@@ -24,7 +24,7 @@ const MusicsTable = ({ songs }: MusicsTableProps) => {
           <tr className="h-[16px]"></tr>
           {songs.map((song, index) => (
             <tr
-              key={song.id}
+              key={song?.id}
               className="text-gray-300 text-sm font-light hover:bg-white/10 overflow-hidden trasition duration-300"
             >
               <td className="px-4 py-2 rounded-tl-lg rounded-bl-lg w-5">
@@ -33,21 +33,21 @@ const MusicsTable = ({ songs }: MusicsTableProps) => {
               <td className="px-4 py-2 flex gap-3">
                 <picture className="">
                   <img
-                    src={song.image}
-                    alt={song.title}
+                    src={song?.image}
+                    alt={song?.title}
                     className="w-11 h-11"
                   />
                 </picture>
                 <div className="flex flex-col">
                   <h3 className="text-white text-base font-normal">
-                    {song.title}
+                    {song?.title}
                   </h3>
-                  <span>{song.artists.join(", ")}</span>
+                  <span>{song?.artists.join(", ")}</span>
                 </div>
               </td>
               <td className="px-4 py-2">{song.album}</td>
               <td className="px-4 py-2 rounded-tr-lg rounded-br-lg">
-                {song.duration}
+                {song?.duration}
               </td>
             </tr>
           ))}
