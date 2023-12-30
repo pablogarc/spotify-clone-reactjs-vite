@@ -88,7 +88,7 @@ const CurrentSong = ({ image, title, artists }: any) => {
 };
 
 const SongControl = ({ audio }: any) => {
-  const { currentTime, setCurrentTime } = usePlayerStore((state) => state);
+  const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
     audio.current.addEventListener("timeupdate", handleTimeUpdate);
@@ -179,9 +179,10 @@ const VolumeControl = () => {
 };
 
 const Player = () => {
-  const { currentMusic, isPlaying, setIsPlaying, volume } =
-    usePlayerStore((state) => state);
-  const audioRef: any = useRef();
+  const { currentMusic, isPlaying, setIsPlaying, volume } = usePlayerStore(
+    (state) => state
+  );
+  const audioRef: any = useRef(null);
 
   useEffect(() => {
     isPlaying ? audioRef.current.play() : audioRef.current.pause();
@@ -192,7 +193,8 @@ const Player = () => {
   }, [volume]);
 
   useEffect(() => {
-    const { song, playlist, songs } = currentMusic;
+    const { song, playlist } = currentMusic;
+
     if (song) {
       const src = `/music/${playlist?.id}/0${song.id}.mp3`;
       audioRef.current.src = src;
