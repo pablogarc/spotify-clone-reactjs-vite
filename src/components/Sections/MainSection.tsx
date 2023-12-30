@@ -17,7 +17,7 @@ const MainSection = () => {
 
           <div className="flex flex-wrap mt-6 gap-4">
             {playlists.map((playlist) => (
-              <PlayListItemCard key={playlist.id} playlist={playlist} />
+              <PlayListItemCard key={playlist?.id} playlist={playlist} />
             ))}
           </div>
         </div>
