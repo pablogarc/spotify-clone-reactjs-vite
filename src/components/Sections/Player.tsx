@@ -182,7 +182,7 @@ const Player = () => {
   const { currentMusic, isPlaying, setIsPlaying, volume } = usePlayerStore(
     (state) => state
   );
-  const audioRef: any = useRef(null);
+  const audioRef: any = useRef();
 
   useEffect(() => {
     isPlaying ? audioRef.current.play() : audioRef.current.pause();
@@ -211,12 +211,12 @@ const Player = () => {
     <>
       <div className="flex flex-row justify-between w-full px-1 z-50">
         <div className="w-[200px]">
-          <CurrentSong {...currentMusic.song} />
+          <CurrentSong {...currentMusic?.song} />
         </div>
 
         <div className="grid place-content-center gap-4 flex-1">
           <div className="flex justify-center flex-col items-center">
-            <button className="bg-white rounded-full p-2" onClick={handleClick}>
+            <button className={`bg-white rounded-full p-2 ${currentMusic.song ? "" : "hidden"}`} onClick={handleClick}>
               {isPlaying ? <Pause /> : <Play />}
             </button>
             <SongControl audio={audioRef} />
