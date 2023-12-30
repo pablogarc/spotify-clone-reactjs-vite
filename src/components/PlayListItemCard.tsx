@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Playlist } from "../lib/data";
 import CardPlayButton from "./CardPlayButton";
 
@@ -16,8 +17,8 @@ const PlayListItemCard = ({ playlist }: SideMenuCardProps) => {
           <CardPlayButton id={id} />
         </div>
 
-        <a
-          href={`/playlist/${id}`}
+        <Link
+          to={`/playlist/${id}`}
           className="playlist-item transition-all duration-300 flex relative p-2 overflow-hidden gap-2 pb-6 rounded-md hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 w-44 flex-col"
         >
           <picture className=" aspect-square w-full h-auto flex-none">
@@ -33,7 +34,7 @@ const PlayListItemCard = ({ playlist }: SideMenuCardProps) => {
 
             <span className="text-xs text-gray-400">{artistsString}</span>
           </div>
-        </a>
+        </Link>
       </article>
     </>
   );
