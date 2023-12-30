@@ -18,8 +18,8 @@ This is a Spotify clone app built with React, Vite, TypeScript, and TailwindCSS.
 
 ## Screenshots
 
-![Screenshot 1](/path/to/screenshot1.png)
-![Screenshot 2](/path/to/screenshot2.png)
+![Home](https://github.com/pablogarc/spotify-clone-reactjs-vite/assets/43918722/1bbd8596-58ab-4f39-b021-9c435e008a78)
+![playlist](https://github.com/pablogarc/spotify-clone-reactjs-vite/assets/43918722/26f0ed16-87cc-4950-a8b7-47cfe0ffe848)
 
 ## Installation
 
@@ -30,7 +30,7 @@ To clone the repository and install the app using npm, follow these steps:
 3. Run the following command to clone the repository:
 
   ```shell
-  git clone https://github.com/your-username/spotify-clone.git
+  git clone https://github.com/pablogarc/spotify-clone-reactjs-vite.git
   ```
 
 4. Change into the cloned directory:
