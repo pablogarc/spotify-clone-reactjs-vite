@@ -2,7 +2,7 @@ import "./App.css";
 import MainSection from "./components/Sections/MainSection";
 import AsideMenu from "./components/AsideMenu";
 import PlaylistItem from "./pages/PlaylistItem";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Player from "./components/Sections/Player";
 
 function App() {
@@ -15,12 +15,10 @@ function App() {
         </aside>
 
         <main className="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto">
-          <Router>
             <Routes>
               <Route index element={<MainSection />} />
               <Route path="/playlist/:id" element={<PlaylistItem />} />
             </Routes>
-          </Router>
           <slot />
         </main>
 
