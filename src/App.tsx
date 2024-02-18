@@ -4,6 +4,7 @@ import AsideMenu from "./components/AsideMenu";
 import PlaylistItem from "./pages/PlaylistItem";
 import { Routes, Route } from "react-router-dom";
 import Player from "./components/Sections/Player";
+import Search from "./pages/Search";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Routes>
               <Route index element={<MainSection />} />
               <Route path="/playlist/:id" element={<PlaylistItem />} />
+              <Route path="/search" element={<Search />} />
             </Routes>
           <slot />
         </main>
