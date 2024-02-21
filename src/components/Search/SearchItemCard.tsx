@@ -6,7 +6,7 @@ interface SideMenuCardProps {
 }
 
 const SearchItemCard = ({ playlist }: SideMenuCardProps) => {
-  const { id, cover, title, artists } = playlist;
+  const { cover, title, artists } = playlist;
   const artistsString = artists.join(", ");
 
   return (
