@@ -1,4 +1,5 @@
-import { Play, Pause } from "./Sections/Player";
+import { Play } from "./Player/Play";
+import { Pause } from "./Player/Pause";
 import { usePlayerStore } from "../store/playerStore";
 import { allPlaylists, songs as allSongs } from "../lib/data";
 
@@ -23,7 +24,7 @@ const CardPlayButton = ({ id, size = "small" }: CardPlayButtonProps) => {
     const songs = allSongs.filter((song) => song?.albumId === playlist?.albumId);
 
     setIsPlaying(true);
-    setCurrentMusic({ songs, playlist, song: songs[0] });
+    setCurrentMusic({ songs: songs as [], playlist, song: songs[0] });
   };
 
   const iconClassName = size === "small" ? "w-4 h-4" : "w-5 h-5";
