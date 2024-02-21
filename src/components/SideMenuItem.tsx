@@ -9,7 +9,7 @@ interface SideMenuProps {
 }
 
 const SideMenuItem = ({ href, text }: SideMenuProps) => {
-  const linksMap: any = {
+  const linksMap: { [key: string]: JSX.Element } = {
     Home: <GrHomeRounded size={24} />,
     Search: <FiSearch size={24} />,
     Library: <VscLibrary size={24} />,
